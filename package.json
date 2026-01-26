@@ -8,7 +8,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "predeploy": "npm run build",
-        "deploy": "wrangler deploy"
+        "deploy": "wrangler deploy --assets ./dist"
     },
     "dependencies": {
         "clsx": "^2.1.0",
