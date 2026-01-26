@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import heroAvatar from '../assets/hero_avatar.png';
 
 const Hero = () => {
     return (
@@ -16,7 +17,7 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-purple-500 glow-blur opacity-20 rounded-full" style={{ zIndex: -1 }} />
                     <div className="rounded-full overflow-hidden glass border-white/10" style={{ width: '192px', height: '192px' }}>
                         <img
-                            src="/src/assets/hero_avatar.png"
+                            src={heroAvatar}
                             alt="Avatar"
                             className="w-full h-full"
                             style={{ objectFit: 'cover' }}
