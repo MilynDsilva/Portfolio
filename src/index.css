@@ -628,18 +628,21 @@ section {
     height: min(520px, 90vw);
     display: grid;
     place-items: center;
+    --orbit-inner: 105px;
+    --orbit-mid: 180px;
+    --orbit-outer: 255px;
 }
 
 .skills-core {
-    width: 120px;
-    height: 120px;
-    border-radius: 28px;
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
     background: linear-gradient(145deg, #6d28d9, #9333ea);
     display: grid;
     place-items: center;
     box-shadow: 0 0 70px rgba(124, 58, 237, 0.6);
     font-family: var(--font-heading);
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     color: white;
     position: relative;
 }
@@ -648,6 +651,21 @@ section {
     position: absolute;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 999px;
+}
+
+.ring-inner {
+    width: calc(var(--orbit-inner) * 2);
+    height: calc(var(--orbit-inner) * 2);
+}
+
+.ring-mid {
+    width: calc(var(--orbit-mid) * 2);
+    height: calc(var(--orbit-mid) * 2);
+}
+
+.ring-outer {
+    width: calc(var(--orbit-outer) * 2);
+    height: calc(var(--orbit-outer) * 2);
 }
 
 .skills-caption {
@@ -701,13 +719,13 @@ section {
 }
 
 .orbit-inner {
-    width: 210px;
-    height: 210px;
+    width: calc(var(--orbit-inner) * 2);
+    height: calc(var(--orbit-inner) * 2);
 }
 
 .orbit-outer {
-    width: 360px;
-    height: 360px;
+    width: calc(var(--orbit-mid) * 2);
+    height: calc(var(--orbit-mid) * 2);
     animation-duration: 32s;
     animation-direction: reverse;
 }
@@ -716,11 +734,11 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: rotate(var(--angle)) translateY(-105px) rotate(calc(var(--angle) * -1));
+    transform: rotate(var(--angle)) translateY(calc(var(--orbit-inner) * -1)) rotate(calc(var(--angle) * -1));
 }
 
 .orbit-outer .orbit-icon {
-    transform: rotate(var(--angle)) translateY(-180px) rotate(calc(var(--angle) * -1));
+    transform: rotate(var(--angle)) translateY(calc(var(--orbit-mid) * -1)) rotate(calc(var(--angle) * -1));
 }
 
 @keyframes orbit-spin {
@@ -729,6 +747,93 @@ section {
     }
     to {
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-shell {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 28px;
+    }
+
+    .nav-link {
+        letter-spacing: 0.25rem;
+    }
+
+    .nav-logo {
+        left: 18px !important;
+        right: auto;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding-top: 130px;
+    }
+
+    .hero-avatar {
+        width: 136px;
+        height: 136px;
+    }
+
+    .hero-badge {
+        top: -14px;
+        right: -14px;
+        font-size: 0.65rem;
+    }
+
+    .skills-stage {
+        width: min(420px, 92vw);
+        height: min(420px, 92vw);
+        --orbit-inner: 85px;
+        --orbit-mid: 145px;
+        --orbit-outer: 210px;
+    }
+
+    .skills-core {
+        width: 76px;
+        height: 76px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .nav-shell {
+        padding: 0 24px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-link {
+        letter-spacing: 0.18rem;
+        font-size: 0.55rem;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-intro h2 {
+        font-size: 1.9rem;
+    }
+
+    .nav-logo {
+        left: 32px !important;
+    }
+
+    .nav-logo span {
+        font-size: 20px !important;
+        letter-spacing: 0.06em !important;
     }
 }
 

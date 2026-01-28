@@ -29,7 +29,7 @@ const Navbar = () => {
             }}
         >
             {/* Logo - Perfectly Centered in Viewport */}
-            <div style={{
+            <div className="nav-logo" style={{
                 position: 'absolute',
                 left: '50%',
                 top: '50%',
@@ -44,12 +44,12 @@ const Navbar = () => {
                         textShadow: '0 0 25px rgba(112, 0, 255, 0.7)'
                     }}
                 >
-                    <span className="text-white" style={{ fontSize: '38px', fontFamily: 'serif', fontWeight: 'bold' }}>Σ</span>
+                    <span className="text-white" style={{ fontSize: '28px', fontFamily: 'Sora, system-ui, sans-serif', fontWeight: '700', letterSpacing: '0.08em' }}>MD</span>
                 </motion.div>
             </div>
 
             {/* Navigation Container */}
-            <div className="container" style={{
+            <div className="container nav-shell" style={{
                 height: '100%',
                 display: 'flex',
                 alignItems: 'center',
@@ -60,7 +60,7 @@ const Navbar = () => {
                 maxWidth: '1200px',
                 padding: '0 40px'
             }}>
-                <div style={{ display: 'flex', gap: '56px' }}>
+                <div className="nav-links" style={{ display: 'flex', gap: '56px' }}>
                     {['Home', 'About', 'Lab'].map((item, index) => (
                         <motion.a
                             key={item}

@@ -67,12 +67,12 @@ const Skills = () => {
                         animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
                         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
                     >
-                        Σ
+                        MD
                     </motion.div>
 
-                    <div className="skills-ring" style={{ width: '210px', height: '210px' }} />
-                    <div className="skills-ring" style={{ width: '360px', height: '360px' }} />
-                    <div className="skills-ring" style={{ width: '510px', height: '510px' }} />
+                    <div className="skills-ring ring-inner" />
+                    <div className="skills-ring ring-mid" />
+                    <div className="skills-ring ring-outer" />
 
                     <div className="orbit orbit-inner">
                         {tools.slice(0, 4).map((tool, i) => (

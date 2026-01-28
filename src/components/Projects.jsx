@@ -48,11 +48,11 @@ const Projects = () => {
             reversed: false
         },
         {
-            title: "Example Project",
-            description: "A web app for visualized personalized spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+            title: "Digital Anatomy Atlas",
+            description: "Architected and led backend development for a serverless AWS environment, translating client requirements into scalable services and reliable data workflows.",
             image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop",
-            tags: ["Figma", "Design", "UI/UX"],
-            link: "#",
+            tags: ["AWS", "Serverless", "Backend Architecture"],
+            link: "https://play.google.com/store/apps/details?id=com.focusmedica.digitalanatomy",
             github: "#",
             reversed: true
         }
