@@ -24,7 +24,7 @@ const SkillIcon = ({ icon, delay, radius, speed }) => {
             }}
         >
             <div
-                className="absolute glass bg-white/5 border-white/10 flex items-center justify-center shadow-xl rounded-xl"
+                className="skill-icon"
                 style={{
                     top: 0,
                     left: '50%',
@@ -57,33 +57,30 @@ const Skills = () => {
     ];
 
     return (
-        <section className="relative flex items-center justify-center" style={{ minHeight: '600px', paddingTop: '80px', paddingBottom: '80px', overflow: 'hidden' }}>
+        <section className="relative flex items-center justify-center" style={{ minHeight: '640px', paddingTop: '60px', paddingBottom: '100px', overflow: 'hidden' }}>
             <div className="container relative flex flex-col items-center">
+                <p className="skills-caption">
+                    I design meaningful interfaces and systems that balance clarity, motion, and detail.
+                </p>
 
-                {/* Orbital System */}
-                <div className="relative flex items-center justify-center" style={{ width: '500px', height: '500px' }}>
-
-                    {/* Central Logo */}
-                    <div className="relative z-10 w-24 h-24 bg-purple-600 rounded-3xl flex items-center justify-center shadow-xl" style={{ transform: 'rotate(12deg)', boxShadow: '0 0 50px rgba(112,0,255,0.5)' }}>
-                        <span className="text-white text-4xl font-bold">Σ</span>
+                <div className="skills-stage">
+                    <div className="skills-core">
+                        Σ
                     </div>
 
-                    {/* Rings */}
-                    <div className="absolute border-white/5 rounded-full" style={{ width: '200px', height: '200px', border: '1px solid rgba(255,255,255,0.05)' }} />
-                    <div className="absolute border-white/5 rounded-full" style={{ width: '350px', height: '350px', border: '1px solid rgba(255,255,255,0.05)' }} />
-                    <div className="absolute border-white/5 rounded-full" style={{ width: '500px', height: '500px', border: '1px solid rgba(255,255,255,0.05)' }} />
+                    <div className="skills-ring" style={{ width: '200px', height: '200px' }} />
+                    <div className="skills-ring" style={{ width: '340px', height: '340px' }} />
+                    <div className="skills-ring" style={{ width: '480px', height: '480px' }} />
 
-                    {/* Orbiting Icons */}
                     {tools.slice(0, 4).map((tool, i) => (
-                        <SkillIcon key={i} icon={tool} radius={100} delay={i * 2} speed={20} />
+                        <SkillIcon key={i} icon={tool} radius={100} delay={i * 2} speed={18} />
                     ))}
                     {tools.slice(4, 8).map((tool, i) => (
-                        <SkillIcon key={i + 4} icon={tool} radius={175} delay={i * 3} speed={30} />
+                        <SkillIcon key={i + 4} icon={tool} radius={170} delay={i * 3} speed={26} />
                     ))}
-                </div>
 
-                {/* Perspective Lines Design */}
-                <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" style={{ zIndex: -1 }} />
+                    <div className="skills-platform" />
+                </div>
             </div>
         </section>
     );

@@ -6,11 +6,14 @@ const ExperienceCard = ({ title, description, icon: Icon, gradientClass }) => {
     return (
         <motion.div
             whileHover={{ y: -5 }}
-            className="relative p-[1px] rounded-3xl"
-            style={{ overflow: 'hidden' }}
+            className="relative rounded-3xl"
+            style={{ overflow: 'hidden', padding: '1px' }}
         >
-            <div className={`absolute inset-0 ${gradientClass}`} style={{ opacity: 0.2 }} />
-            <div className="relative glass bg-[#110a1f] p-8 rounded-[23px] h-full flex flex-col items-start border-white/5">
+            <div className={`absolute inset-0 ${gradientClass}`} style={{ opacity: 0.18 }} />
+            <div
+                className="relative glass rounded-3xl h-full flex flex-col items-start"
+                style={{ padding: '28px', background: 'rgba(15, 9, 28, 0.88)' }}
+            >
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 shadow-xl ${gradientClass}`}>
                     <Icon className="text-white" size={24} />
                 </div>
@@ -56,7 +59,7 @@ const Experience = () => {
         <section id="about" style={{ paddingTop: '40px', paddingBottom: '80px' }}>
             <div className="container">
                 <h2 className="text-3xl font-bold text-white mb-12">Work Experience</h2>
-                <div className="md-grid-2">
+                <div className="experience-grid">
                     {experiences.map((exp, index) => (
                         <ExperienceCard key={index} {...exp} />
                     ))}

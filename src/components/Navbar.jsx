@@ -17,7 +17,7 @@ const Navbar = () => {
             className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
             style={{
                 height: '80px',
-                background: 'rgba(5, 1, 26, 0.98)',
+                background: scrolled ? 'rgba(5, 2, 20, 0.98)' : 'rgba(5, 2, 20, 0.85)',
                 backdropFilter: 'blur(20px)',
                 borderBottom: '1px solid rgba(139, 92, 246, 0.15)',
                 display: 'flex',
@@ -60,7 +60,7 @@ const Navbar = () => {
                 maxWidth: '1200px',
                 padding: '0 40px'
             }}>
-                <div style={{ display: 'flex', gap: '60px' }}>
+                <div style={{ display: 'flex', gap: '56px' }}>
                     {['Home', 'About', 'Lab'].map((item, index) => (
                         <motion.a
                             key={item}
@@ -68,7 +68,7 @@ const Navbar = () => {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * index }}
-                            className="text-[10px] font-bold text-gray-400 hover:text-white transition-all uppercase tracking-[4px]"
+                            className="nav-link"
                             style={{
                                 textDecoration: 'none',
                                 whiteSpace: 'nowrap'
