@@ -1,83 +1,89 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const SkillIcon = ({ icon, delay, radius, speed }) => {
+const SkillIcon = ({ icon, label, angle }) => {
     return (
-        <motion.div
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
-            transition={{
-                duration: speed,
-                repeat: Infinity,
-                ease: "linear",
-                delay: delay
-            }}
-            className="absolute"
-            style={{
-                width: radius * 2,
-                height: radius * 2,
-                top: '50%',
-                left: '50%',
-                marginLeft: -radius,
-                marginTop: -radius,
-                pointerEvents: 'none'
-            }}
-        >
-            <div
-                className="skill-icon"
-                style={{
-                    top: 0,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '40px',
-                    height: '40px',
-                    pointerEvents: 'auto'
-                }}
-            >
+        <div className="orbit-icon" style={{ ['--angle']: `${angle}deg` }}>
+            <div className="skill-icon">
                 <img
                     src={icon}
-                    alt="Tool"
-                    style={{ width: '24px', height: '24px', objectFit: 'contain' }}
+                    alt={label}
+                    loading="lazy"
+                    onError={(e) => {
+                        e.currentTarget.src = '/vite.svg';
+                    }}
                 />
             </div>
-        </motion.div>
+        </div>
     );
 };
 
 const Skills = () => {
     const tools = [
-        'https://cdn.worldvectorlogo.com/logos/figma-1.svg',
-        'https://cdn.worldvectorlogo.com/logos/react-2.svg',
-        'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
-        'https://cdn.worldvectorlogo.com/logos/vitejs.svg',
-        'https://cdn.worldvectorlogo.com/logos/typescript-2.svg',
-        'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg',
-        'https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg',
-        'https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg'
+        {
+            label: 'Node.js',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+        },
+        {
+            label: 'NestJS',
+            icon: 'https://cdn.simpleicons.org/nestjs/ffffff'
+        },
+        {
+            label: 'PostgreSQL',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg'
+        },
+        {
+            label: 'Redis',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
+        },
+        {
+            label: 'Docker',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg'
+        },
+        {
+            label: 'AWS',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg'
+        },
+        {
+            label: 'TypeScript',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+        },
+        {
+            label: 'n8n',
+            icon: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg'
+        }
     ];
 
     return (
         <section className="relative flex items-center justify-center" style={{ minHeight: '640px', paddingTop: '60px', paddingBottom: '100px', overflow: 'hidden' }}>
             <div className="container relative flex flex-col items-center">
                 <p className="skills-caption">
-                    I design meaningful interfaces and systems that balance clarity, motion, and detail.
+                    I build reliable backend systems with clean APIs, fast data layers, and stable infrastructure.
                 </p>
 
                 <div className="skills-stage">
-                    <div className="skills-core">
+                    <motion.div
+                        className="skills-core"
+                        animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                    >
                         Σ
+                    </motion.div>
+
+                    <div className="skills-ring" style={{ width: '210px', height: '210px' }} />
+                    <div className="skills-ring" style={{ width: '360px', height: '360px' }} />
+                    <div className="skills-ring" style={{ width: '510px', height: '510px' }} />
+
+                    <div className="orbit orbit-inner">
+                        {tools.slice(0, 4).map((tool, i) => (
+                            <SkillIcon key={tool.label} icon={tool.icon} label={tool.label} angle={i * 90} />
+                        ))}
                     </div>
-
-                    <div className="skills-ring" style={{ width: '200px', height: '200px' }} />
-                    <div className="skills-ring" style={{ width: '340px', height: '340px' }} />
-                    <div className="skills-ring" style={{ width: '480px', height: '480px' }} />
-
-                    {tools.slice(0, 4).map((tool, i) => (
-                        <SkillIcon key={i} icon={tool} radius={100} delay={i * 2} speed={18} />
-                    ))}
-                    {tools.slice(4, 8).map((tool, i) => (
-                        <SkillIcon key={i + 4} icon={tool} radius={170} delay={i * 3} speed={26} />
-                    ))}
+                    <div className="orbit orbit-outer">
+                        {tools.slice(4, 8).map((tool, i) => (
+                            <SkillIcon key={tool.label} icon={tool.icon} label={tool.label} angle={i * 90 + 45} />
+                        ))}
+                    </div>
 
                     <div className="skills-platform" />
                 </div>

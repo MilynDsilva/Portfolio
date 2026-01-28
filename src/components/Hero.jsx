@@ -32,7 +32,7 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className="hero-copy"
                     >
-                        <p className="hero-label">A Designer who</p>
+                        <p className="hero-label">A Backend Developer who</p>
                         <h1>
                             Judges a book <br />
                             by its <span>cover</span>...
@@ -50,7 +50,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                    I'm a Software Engineer.
+                    I'm a Backend Developer.
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -58,11 +58,7 @@ const Hero = () => {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="hero-role"
                 >
-                    <span>Currently, I'm a Software Engineer at</span>
-                    <span>
-                        <span className="fb-icon">f</span>
-                        Facebook
-                    </span>
+                    <span>Currently, I'm a Backend Developer & Automation Engineer at CodeCraft Technologies Pvt Ltd</span>
                 </motion.div>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -70,9 +66,8 @@ const Hero = () => {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="hero-bio"
                 >
-                    A self-taught UI/UX designer, functioning in the industry for 3+ years now.
-                    I make meaningful and delightful digital products that create an equilibrium
-                    between user needs and business goals.
+                    A backend developer focused on building reliable APIs, scalable services,
+                    and data systems that keep products fast, secure, and dependable.
                 </motion.p>
             </div>
 

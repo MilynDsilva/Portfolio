@@ -39,11 +39,11 @@ const ProjectCard = ({ title, description, image, tags, link, github, reversed }
 const Projects = () => {
     const projects = [
         {
-            title: "Example Project",
-            description: "A web app for visualized personalized spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+            title: "RestoreMe Dashboard",
+            description: "Built and maintained backend services for the RestoreMe dashboard while leading the web team. Focused on reliable APIs, secure data flows, and performance for daily operations.",
             image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop",
-            tags: ["React", "Spotify API", "Node"],
-            link: "#",
+            tags: ["Backend", "APIs", "Team Lead"],
+            link: "https://dashboard.restoreme.care/download",
             github: "#",
             reversed: false
         },
